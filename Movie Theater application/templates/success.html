@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ticket.css') }}">
+</head>
+<body>
+
+<div class="ticket">
+    <div class="ticket-left">
+        <h2>🎬 MOVIE TICKET</h2>
+        <p><strong>Movie:</strong> {{ movie }}</p>
+        <p><strong>User:</strong> {{ session['user'] }}</p>
+        <p><strong>Seats:</strong> {{ seats | join(', ') }}</p>
+        <p><strong>Amount:</strong> ₹{{ amount }}</p>
+    </div>
+
+    <div class="ticket-right">
+        <div class="barcode"></div>
+        <a href="/download" class="btn">⬇ Download PDF</a>
+    </div>
+</div>
+
+<a href="/movies" class="back">⬅ Book Another Movie</a>
+
+</body>
+</html>

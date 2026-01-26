@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<h2>About Us</h2>
+
+<p>
+Blood donation isn't just an act of kindness — it is a lifeline.
+We understand that every moment matters during medical emergencies.
+Shortages of blood can cost lives, and traditional systems often
+struggle with delays and inaccurate donor information.
+
+To address this challenge, we have built a modern, technology-driven
+blood donation platform that simplifies the process for donors and
+healthcare providers alike.
+
+Our website acts as a bridge between donors, recipients, and medical
+institutions. By using data-driven approaches and intelligent
+prediction methods, we help identify potential donors, manage blood
+group availability, and improve donation planning. This ensures the
+right blood reaches the right patient at the right time.
+
+We strongly believe in voluntary and ethical blood donation. Every
+registered donor contributes to saving lives and strengthening the
+healthcare system. Whether for accident victims, surgeries, or chronic
+illnesses, a single donation can make a powerful difference.
+
+Together, let us turn compassion into action and save lives — one
+donation at a time.
+</p>
+<!-- 🖼 Image -->
+<img src="{{ url_for('static', filename='images/blood3.jpg') }}"
+     class="img-fluid rounded shadow mt-4">
+
+
+<!-- 🎥 Video Section -->
+<div class="my-4 text-center">
+    <video width="80%" controls preload="metadata" playsinline>
+        <source src="{{ url_for('static', filename='videos/blood_donation.mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,7 @@
+age,weight,blood_group,months_since_last_donation,total_donations,gender,target
+25,60,A+,3,6,Male,1
+40,70,O+,10,2,Female,0
+30,65,B+,4,7,Male,1
+50,75,AB+,18,1,Female,0
+28,58,O-,2,9,Male,1
+35,68,A-,8,4,Female,0

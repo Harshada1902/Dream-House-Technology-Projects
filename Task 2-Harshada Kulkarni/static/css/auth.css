@@ -1,0 +1,102 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Background */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+}
+
+/* Login Card */
+.auth-card {
+    width: 400px;
+    padding: 35px 30px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    animation: slideUp 0.6s ease;
+}
+
+/* Animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Heading */
+.auth-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 30px;
+    padding: 12px 18px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.form-control::placeholder {
+    color: #888;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+    background: #fff;
+}
+
+/* Button */
+.btn-auth {
+    width: 100%;
+    background: #dc3545;
+    color: #fff;
+    border-radius: 30px;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-auth:hover {
+    background: #c82333;
+}
+
+/* Links */
+.auth-link {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #555;
+}
+
+.auth-link a {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}

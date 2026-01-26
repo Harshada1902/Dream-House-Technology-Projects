@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}Blood Donation Tips{% endblock %}
+
+{% block content %}
+
+<div class="text-center mb-4">
+    <h2 class="text-danger font-weight-bold">Blood Donation Tips</h2>
+    <p class="text-muted">Click on a card to learn more ❤️</p>
+</div>
+
+<div class="cards-container">
+    <div class="info-card" onclick="showInfo('nutrition')">
+        <i class="fa-solid fa-apple-whole"></i>
+        <h4>Nutrition</h4>
+    </div>
+
+    <div class="info-card" onclick="showInfo('hydration')">
+        <i class="fa-solid fa-glass-water"></i>
+        <h4>Hydration</h4>
+    </div>
+
+    <div class="info-card" onclick="showInfo('preparation')">
+        <i class="fa-solid fa-clipboard-check"></i>
+        <h4>Preparation</h4>
+    </div>
+
+    <div class="info-card" onclick="showInfo('recovery')">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <h4>Recovery</h4>
+    </div>
+</div>
+
+<div id="info-display" class="info-display">
+    <p class="text-muted">Select a tip above to see details.</p>
+</div>
+
+<!-- JavaScript -->
+<script>
+function showInfo(topic) {
+    const info = {
+        nutrition: "Eat iron-rich foods like spinach, beans, eggs, and red meat before donating.",
+        hydration: "Drink plenty of water before and after donation to stay hydrated.",
+        preparation: "Get enough sleep and avoid heavy exercise or fatty foods before donation.",
+        recovery: "Rest for a few hours after donating and continue eating healthy foods."
+    };
+
+    document.getElementById("info-display").innerHTML =
+        `<p class="font-weight-bold text-danger">${info[topic]}</p>`;
+}
+</script>
+
+<!-- Page CSS -->
+<style>
+    
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.info-card {
+    width: 220px;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 18px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card i {
+    font-size: 40px;
+    color: #dc3545;
+    margin-bottom: 15px;
+}
+
+.info-card h4 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    background: #fff5f5;
+}
+
+.info-display {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 16px;
+}
+
+</style>
+
+{% endblock %}

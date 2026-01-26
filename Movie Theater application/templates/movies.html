@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/static/style.css">
+<div class="container">
+<h2>Select Movie</h2>
+{% for movie in movies %}
+<a href="/seats/{{ movie }}">
+<button>{{ movie }}</button>
+</a>
+{% endfor %}
+<br><br>
+<a href="/history">My Bookings</a> |
+<a href="/logout">Logout</a>
+</div>

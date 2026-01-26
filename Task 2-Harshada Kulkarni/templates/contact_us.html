@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<div class="container contact-section">
+    <div class="row align-items-center">
+
+        <!-- IMAGE SECTION -->
+        <div class="col-md-6 mb-4">
+            <div class="contact-image-card">
+                <img 
+                    src="{{ url_for('static', filename='images/contact.jpg') }}"
+                    alt="Contact Us"
+                    class="img-fluid"
+                >
+                <h5 class="mt-3 text-center">We’re here to help ❤️</h5>
+                <p class="text-center text-muted">
+                    Your message can help save lives.
+                </p>
+            </div>
+        </div>
+
+        <!-- FORM SECTION -->
+        <div class="col-md-6">
+            <div class="contact-form-card">
+                <h2 class="mb-4 text-danger fw-bold">Contact Us</h2>
+
+                <form>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" placeholder="Name" required>
+                        <label>👤 Your Name</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                        <label>📧 Email Address</label>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <textarea class="form-control" style="height:120px" placeholder="Message" required></textarea>
+                        <label>💬 Your Message</label>
+                    </div>
+
+                    <button class="btn btn-danger w-100 send-btn">
+                        🚀 Send Message
+                    </button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

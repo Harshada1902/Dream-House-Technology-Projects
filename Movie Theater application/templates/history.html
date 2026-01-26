@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/static/style.css">
+<div class="container">
+<h2>My Bookings</h2>
+{% for b in bookings %}
+<p>
+🎬 {{ b.movie }} <br>
+🎟 {{ b.seats }} <br>
+💰 ₹{{ b.amount }}
+</p>
+<hr>
+{% endfor %}
+</div>

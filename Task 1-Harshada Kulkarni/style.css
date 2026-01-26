@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9f9;
+  color: #111;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+img { width: 100%; display: block; }
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4e73df;
+}
+
+header nav a {
+  margin-left: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+header nav a:hover {
+  color: #4e73df;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(78,115,223,0.85), rgba(111,66,193,0.85)),
+    url("college.avif") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.2rem;
+}
+
+.hero .btn {
+  background: #fff;
+  color: #4e73df;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+/* Sections */
+section {
+  padding: 5rem 10%;
+}
+
+section h2 {
+  text-align: center;
+  color: #4e73df;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  flex: 1 1 300px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  color: #4e73df;
+  margin-bottom: 0.5rem;
+}
+
+/* Students */
+.students {
+  background: #eef2ff;
+}
+
+.student-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.student-container img {
+  max-width: 450px;
+  border-radius: 15px;
+}
+
+.students .btn {
+  background: #6f42c1;
+  color: #fff;
+  padding: 12px 28px;          
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+
+  display: inline-flex;      
+  align-items: center;        
+  justify-content: center;    
+
+  line-height: 1.2;           
+}
+
+
+/* Contact */
+.contact {
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 2rem;
+  color: #4e73df;
+}
+
+/* Footer */
+footer {
+  background: #4e73df;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header { flex-direction: column; }
+  .hero h1 { font-size: 2.2rem; }
+  .student-container { flex-direction: column; text-align: center; }
+}
+/* Cookie Banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 90%;
+  z-index: 9999;
+}
+
+#cookie-banner p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+#cookie-banner a {
+  color: #4e73df;
+  font-weight: 500;
+}
+
+/* Buttons */
+.cookie-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#accept-cookies {
+  background: #6f42c1;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#decline-cookies {
+  background: #e0e0e0;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#accept-cookies:hover {
+  background: #5931a5;
+}
+
+#decline-cookies:hover {
+  background: #cfcfcf;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #cookie-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+

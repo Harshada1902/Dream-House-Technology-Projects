@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h2 {
+            text-align: center;
+            color: #dc3545;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+            width: 35%;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🩸 Blood Donation Eligibility Report</h2>
+
+<table>
+    <tr><th>Username</th><td>{{ report.username }}</td></tr>
+    <tr><th>Age</th><td>{{ report.age }}</td></tr>
+    <tr><th>Weight</th><td>{{ report.weight }}</td></tr>
+    <tr><th>Blood Group</th><td>{{ report.blood_group }}</td></tr>
+    <tr><th>Gender</th><td>{{ report.gender }}</td></tr>
+    <tr><th>Months Since Last Donation</th><td>{{ report.months }}</td></tr>
+    <tr><th>Total Donations</th><td>{{ report.total }}</td></tr>
+    <tr><th>Eligibility</th><td>{{ report.eligibility }}</td></tr>
+    <tr><th>Date</th><td>{{ report.date }}</td></tr>
+</table>
+
+</body>
+</html>

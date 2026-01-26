@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block title %}Prediction{% endblock %}
+
+{% block content %}
+
+<style>
+/* ================= CARD ================= */
+.prediction-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* ================= FORM ================= */
+.form-control, .form-select {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 8px rgba(220,53,69,0.4);
+    border-color: #dc3545;
+}
+
+/* ================= BUTTON ================= */
+.predict-btn {
+    border-radius: 30px;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.predict-btn:hover {
+    transform: scale(1.05);
+    background: #b02a37;
+}
+
+/* ================= RESULT ================= */
+.result-box {
+    background: linear-gradient(135deg, #ff4d4d, #ff9999);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    animation: popUp 0.6s ease;
+}
+
+@keyframes popUp {
+    0% { transform: scale(0.7); }
+    100% { transform: scale(1); }
+}
+
+/* ================= IMAGE ================= */
+.prediction-img {
+    max-width: 90%;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+</style>
+
+<h2 class="text-center mb-4">🩸 Donor Prediction</h2>
+
+<div class="row align-items-center">
+    <!-- FORM -->
+    <div class="col-md-6">
+        <div class="prediction-card">
+
+            <form method="POST">
+                <input class="form-control mb-3" name="age" type="number" placeholder="👤 Age" required>
+                <input class="form-control mb-3" name="weight" type="number" placeholder="⚖️ Weight (kg)" required>
+
+                <select class="form-select mb-3" name="blood_group">
+                    <option disabled selected>🩸 Blood Group</option>
+                    <option>A+</option><option>A-</option>
+                    <option>B+</option><option>B-</option>
+                    <option>AB+</option><option>AB-</option>
+                    <option>O+</option><option>O-</option>
+                </select>
+
+                <input class="form-control mb-3" name="months_since_last_donation" type="number"
+                       placeholder="⏳ Months Since Last Donation">
+
+                <input class="form-control mb-3" name="total_donations" type="number"
+                       placeholder="❤️ Total Donations">
+
+                <select class="form-select mb-4" name="gender">
+                    <option disabled selected>⚧ Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+
+                <button class="btn btn-danger w-100 predict-btn">
+                    🔮 Predict Eligibility
+                </button>
+            </form>
+
+            {% if result %}
+            <div class="result-box mt-4">
+                <h4>Prediction Result</h4>
+                <h3>{{ result }}</h3>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+    
+
+    <!-- IMAGE -->
+    <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/prediction.jpg') }}"
+             class="prediction-img img-fluid">
+    </div>
+</div>
+
+{% endblock %}
