@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI WhatsApp Automation | Direct Sender</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+    <div class="app-wrapper">
+        <header class="main-header">
+            <div class="logo">
+                <i class="fab fa-whatsapp"></i>
+                <span>AI WhatsApp Automation</span>
+            </div>
+            <h1>Automate Your Outreach</h1>
+            <p class="subtitle">Send messages instantly to multiple recipients without saving contacts. Professional,
+                secure, and fast.</p>
+        </header>
+
+        <main class="container">
+            <div class="grid-layout">
+                <!-- Left Column: Settings & Message -->
+                <section class="config-section">
+                    <div class="glass-card">
+                        <div class="card-header">
+                            <i class="fas fa-pen-nib"></i>
+                            <h3>1. Message Content</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-input">Write your message</label>
+                            <textarea id="message-input"
+                                placeholder="Hello! I'm reaching out from AI Automation..."></textarea>
+                            <span class="helper-text">Your message will be sent exactly as written.</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card mt-20">
+                        <div class="card-header">
+                            <i class="fas fa-globe"></i>
+                            <h3>2. Region Settings</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="country-code">Default Country Code</label>
+                            <div class="input-with-prefix">
+                                <span>+</span>
+                                <input type="number" id="country-code" value="91" placeholder="91">
+                            </div>
+                            <span class="helper-text">Code will be automatically prepended to 10-digit numbers.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Right Column: Recipients & Execution -->
+                <section class="recipients-section">
+                    <div class="glass-card full-height">
+                        <div class="card-header">
+                            <i class="fas fa-users"></i>
+                            <h3>3. Recipients</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-list">Phone Numbers (One per line)</label>
+                            <textarea id="phone-list"
+                                placeholder="9876543210&#10;9988776655&#10;+91 1122334455"></textarea>
+                            <div class="stats-row">
+                                <span id="contact-count">0 Recipients</span>
+                                <span id="validation-status" class="status-neutral">Enter numbers to validate</span>
+                            </div>
+                        </div>
+
+                        <div class="action-zone">
+                            <button id="send-all-btn" class="btn btn-primary btn-large">
+                                <span class="btn-text">🚀 Send Directly</span>
+                                <div class="btn-shine"></div>
+                            </button>
+                            <p class="privacy-note">
+                                <i class="fas fa-shield-halved"></i>
+                                <strong>Privacy Note:</strong> We don't store your data. All processing happens locally
+                                in your browser.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Execution Status / Log -->
+            <section class="status-section" id="status-section" style="display: none;">
+                <div class="glass-card">
+                    <div class="card-header">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Sending Progress</h3>
+                        <button class="btn-close-log" id="close-log"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="log-container" id="execution-log">
+                        <!-- Progress items injected here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 AI WhatsApp Automation. Professional Tool for Smart Businesses.</p>
+        </footer>
+    </div>
+
+    <!-- Notification system -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
